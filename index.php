@@ -6,12 +6,17 @@
     <title>RPG_JavaScript</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/main.js"></script>
+    
+    
 </head>
 <?php 
     include ("data/connect_data.php");
 ?>
 <body>
-    <?php var_dump($db); ?>
-    <p> coucou </p>
+    <div>
+        <div class="profile"><p>profile</p></div>
+        <div class="stats"><p>Stats</p></div>
+        <div class="log"><p>console</p></div>
+    </div>
 </body>
 </html>
