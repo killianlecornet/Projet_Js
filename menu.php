@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <script src= "https://code.jquery.com/jquery-1.12.4.min.js"> 
+    <script src= "https://code.jquery.com/jquery-1.12.4.min.js">
     <title>Document</title>
-    
     </script>
 </head>
 <body>
@@ -22,31 +21,57 @@ $executeIsOk = $req->execute();
 
 $liste = $req->fetch();
 
+$req2 = $db->prepare('SELECT * FROM perso');
+
+$req2->bindValue(':num',$_GET['IDtable'],PDO::PARAM_INT);
+
+$executeIsOk2 = $req2->execute();
+
+$liste2 = $req2->fetch();
+
 ?>
     <input type="hidden"  name="IDtable" value="<?= $liste['id'] ?>">
 <div>
    <div>
    <img src="img/barre_vie_mana.png" style="width: 18%;"/>
    </div>
-   <div style="position:absolute;top:0%;left:10%;z-index:2;font-size:100%">
+   <div style="position:absolute;top:-0.6%;left:10%;z-index:2;font-size:90%">
     <p><?= $liste['hp'] ?>/ <?= $liste['hp'] ?></p>
     </div> 
-    <div style="position:absolute;top:2.75%;left:10%;z-index:2;font-size:100%">
+    <div style="position:absolute;top:2.5%;left:10%;z-index:2;font-size:90%">
     <p><?= $liste['mp'] ?>/ <?= $liste['mp'] ?></p>
+    </div>
+    <div style="position:absolute;top:4.5%;left:10%;z-index:2;font-size:120%;color: tan;text-transform: uppercase;letter-spacing: 1px;">
+    <p><?= $liste2['pseudo'] ?></p>
     </div> 
 </div>
 <div>
-   <div>
-   <img src="img/statss.PNG" style="width: 18%;margin-top: 10%;margin-left: 82.3%;"/>
-   </div>
-   <div style="position:absolute;top:35.5%;left:89%;z-index:2;font-size:200%">
+    <div>
+    <img src="img/statss.PNG" style="width: 18%;margin-top:0 auto;margin-left: 82.3%;"/>
+    </div>
+    <div style="position:absolute;top:9%;left:89%;z-index:2;font-size:125%;color: white;text-transform: uppercase;letter-spacing: 1px;">
+    <p><?= $liste['nom_classe'] ?></p>
+    </div> 
+    <div style="position:absolute;top:18%;left:89%;z-index:2;font-size:150%;color: grey;">
     <p><?= $liste['hp'] ?></p>
     </div> 
-    <div style="position:absolute;top:45%;left:89%;z-index:2;font-size:200%">
+    <div style="position:absolute;top:28%;left:89%;z-index:2;font-size:150%;color: grey;">
     <p><?= $liste['atk'] ?></p>
     </div> 
-    <div style="position:absolute;top:54.5%;left:89%;z-index:2;font-size:200%">
+    <div style="position:absolute;top:37.5%;left:89%;z-index:2;font-size:150%;color: grey;">
     <p><?= $liste['mp'] ?></p>
+    </div>
+    <div style="position:absolute;top:47.5%;left:89%;z-index:2;font-size:150%;color: grey;">
+    <p><?= $liste['def'] ?></p>
+    </div>
+    <div style="position:absolute;top:57.5%;left:89%;z-index:2;font-size:130%;color: grey;">
+    <p><?= $liste['magie'] ?></p>
+    </div>
+    <div style="position:absolute;top:69.5%;left:89%;z-index:2;font-size:150%;color: grey;">
+    <p><?= $liste['esquive'] ?></p>
+    </div>
+    <div style="position:absolute;top:80%;left:89%;z-index:2;font-size:160%;color: grey;">
+    <p><?= $liste['vitesse'] ?></p>
     </div> 
 </div>
 <div class="box2"></div> 
@@ -79,6 +104,11 @@ $liste = $req->fetch();
                     }); 
                 } 
             });
-        </script> 
+        </script>
+    
+        <form class="atk" action="" method="post" name="atk" enctype="multipart/form-data">
+            <input type="submit" class="btn-btn-outline-dark" value="Combattre !">
+        </form>
+
 </body>
 </html>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : jeu. 03 déc. 2020 à 18:44
+-- Généré le : ven. 04 déc. 2020 à 00:04
 -- Version du serveur :  10.4.11-MariaDB
 -- Version de PHP : 7.4.5
 
@@ -66,19 +66,7 @@ CREATE TABLE `perso` (
 --
 
 INSERT INTO `perso` (`id`, `pseudo`) VALUES
-(1, 'SUZ');
-
--- --------------------------------------------------------
-
---
--- Structure de la table `personnage`
---
-
-CREATE TABLE `personnage` (
-  `id_perso` int(11) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `age` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+(1, 'ekip');
 
 --
 -- Index pour les tables déchargées
@@ -89,22 +77,6 @@ CREATE TABLE `personnage` (
 --
 ALTER TABLE `classe`
   ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `personnage`
---
-ALTER TABLE `personnage`
-  ADD PRIMARY KEY (`id_perso`);
-
---
--- AUTO_INCREMENT pour les tables déchargées
---
-
---
--- AUTO_INCREMENT pour la table `personnage`
---
-ALTER TABLE `personnage`
-  MODIFY `id_perso` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
