@@ -30,6 +30,20 @@ $liste = $req->fetch();
     <p><?= $liste['mp'] ?>/ <?= $liste['mp'] ?></p>
     </div> 
 </div>
+<div>
+   <div>
+   <img src="img/statss.PNG" style="width: 18%;margin-top: 10%;margin-left: 82.3%;"/>
+   </div>
+   <div style="position:absolute;top:35.5%;left:89%;z-index:2;font-size:200%">
+    <p><?= $liste['hp'] ?></p>
+    </div> 
+    <div style="position:absolute;top:45%;left:89%;z-index:2;font-size:200%">
+    <p><?= $liste['atk'] ?></p>
+    </div> 
+    <div style="position:absolute;top:54.5%;left:89%;z-index:2;font-size:200%">
+    <p><?= $liste['mp'] ?></p>
+    </div> 
+</div>
     
 </body>
 </html>
