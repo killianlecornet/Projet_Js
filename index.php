@@ -3,20 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RPG_JavaScript</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/main.js"></script>
-    
-    
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Document</title>
 </head>
-<?php 
-    include ("data/connect_data.php");
-?>
 <body>
-    <div>
-        <div class="profile"><p>profile</p></div>
-        <div class="stats"><p>Stats</p></div>
-        <div class="log"><p>console</p></div>
-    </div>
+
+<?php 
+include ("data/connect_data.php");
+    
+$req = $db->prepare('SELECT * FROM perso');
+$executeIsOk = $req->execute();
+$liste = $req->fetch();
+
+?>
+
+
+<form class="box" action="modif.php" method="post" name="login" enctype="multipart/form-data">
+  
+    
+        
+        <h1 class="box-title">Création du compte</h1>
+        <input type="text" name="pseudo" class="box-input"  id="exampleFormControlInput1 pseudo" value="<?= $liste['pseudo'] ?>">
+
+   
+    <p><input type="submit" class="box-button" value="Suivant"></p>
+</form>
+
 </body>
 </html>
