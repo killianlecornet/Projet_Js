@@ -4,9 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <script src= "https://code.jquery.com/jquery-1.12.4.min.js"> 
     <title>Document</title>
+    
+    </script>
 </head>
 <body>
+
+    
 <?php 
 include ("data/connect_data.php");
 $req = $db->prepare('SELECT * FROM classe WHERE id=:num');
@@ -44,6 +49,36 @@ $liste = $req->fetch();
     <p><?= $liste['mp'] ?></p>
     </div> 
 </div>
-    
+<div class="box2"></div> 
+        <script type=""> 
+            $(document).keydown(function(e) { 
+                if (e.which == '38') { //haut
+                    $(".box2").finish().animate({ 
+                        top: "-=30" 
+                    }); 
+                } 
+            }); 
+            $(document).keydown(function(e) { 
+                if (e.which == '40') { //descendre 
+                    $(".box2").finish().animate({ 
+                        top: "+=30" 
+                    }); 
+                } 
+            }); 
+            $(document).keydown(function(e) { 
+                if (e.which == '37') { //gauche 
+                    $(".box2").finish().animate({ 
+                        left: "-=30" 
+                    }); 
+                } 
+            });
+            $(document).keydown(function(e) { 
+                if (e.which == '39') { //droite 
+                    $(".box2").finish().animate({ 
+                        left: "+=30" 
+                    }); 
+                } 
+            });
+        </script> 
 </body>
 </html>

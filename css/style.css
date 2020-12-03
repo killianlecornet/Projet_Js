@@ -4,12 +4,24 @@ body {
     background-size: cover;
     
   }
+
+  .box2 {
+    float: center;
+    background-image: url(../img/garcon2.png);
+    margin: -200px auto 0;
+    width: 80px;
+    height: 70px;
+    font-size: 240px;
+    text-align: center;
+    position: relative;
+  }
+  
   .box {
     border: 1px solid #c4c4c4;
     padding: 30px 25px 10px 25px;
     background: white;
-    margin: 90px auto;
-    width: 300px;
+    margin: 200px auto;
+    width: 360px;
   }
   h1.box-logo a {
     text-decoration:none;
