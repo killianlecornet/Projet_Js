@@ -47,31 +47,31 @@ $liste2 = $req2->fetch();
 </div>
 <div>
     <div>
-    <img src="img/statss.PNG" style="width: 18%;margin-top:0 auto;margin-left: 82.3%;"/>
+    <img src="img/newstats.PNG" style="width: 18%;margin-top:0 auto;margin-left: 82.3%;"/>
     </div>
     <div style="position:absolute;top:9%;left:89%;z-index:2;font-size:125%;color: white;text-transform: uppercase;letter-spacing: 1px;">
     <p><?= $liste['nom_classe'] ?></p>
     </div> 
-    <div style="position:absolute;top:18%;left:89%;z-index:2;font-size:150%;color: grey;">
-    <p><?= $liste['hp'] ?></p>
-    </div> 
-    <div style="position:absolute;top:28%;left:89%;z-index:2;font-size:150%;color: grey;">
+    <div style="position:absolute;top:17.5%;left:89%;z-index:2;font-size:150%;color: grey;">
     <p><?= $liste['atk'] ?></p>
     </div> 
-    <div style="position:absolute;top:37.5%;left:89%;z-index:2;font-size:150%;color: grey;">
+    <div style="position:absolute;top:25.5%;left:89%;z-index:2;font-size:150%;color: grey;">
+    <p><?= $liste['hp'] ?></p>
+    </div> 
+    <div style="position:absolute;top:33.5%;left:89%;z-index:2;font-size:150%;color: grey;">
     <p><?= $liste['mp'] ?></p>
     </div>
-    <div style="position:absolute;top:47.5%;left:89%;z-index:2;font-size:150%;color: grey;">
+    <div style="position:absolute;top:41.5%;left:89%;z-index:2;font-size:150%;color: grey;">
     <p><?= $liste['def'] ?></p>
     </div>
-    <div style="position:absolute;top:57.5%;left:89%;z-index:2;font-size:130%;color: grey;">
-    <p><?= $liste['magie'] ?></p>
-    </div>
-    <div style="position:absolute;top:69.5%;left:89%;z-index:2;font-size:150%;color: grey;">
+    <div style="position:absolute;top:49.5%;left:89%;z-index:2;font-size:130%;color: grey;">
     <p><?= $liste['esquive'] ?></p>
     </div>
-    <div style="position:absolute;top:80%;left:89%;z-index:2;font-size:160%;color: grey;">
+    <div style="position:absolute;top:57.5%;left:89%;z-index:2;font-size:150%;color: grey;">
     <p><?= $liste['vitesse'] ?></p>
+    </div>
+    <div style="position:absolute;top:65%;left:89%;z-index:2;font-size:160%;color: grey;">
+    <p><?= $liste['skill_1'] ?>, <?= $liste['skill_2'] ?></p>
     </div> 
 </div>
 <div class="box2"></div> 
