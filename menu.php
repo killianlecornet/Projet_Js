@@ -109,6 +109,25 @@ $liste2 = $req2->fetch();
         <form class="atk" action="combat.php?IDtable=<?= $liste['id'] ?>" method="post" name="atk" enctype="multipart/form-data">
             <input type="submit" class="btn-btn-outline-dark" value="Combattre !">
         </form>
+    <div class="button_container">
+                <button id="button_modal" onclick="openModal()" style="position: absolute;top: 10.5%;width: 17.95%;background-color: red;border: 0;color: white;height: 4%;"> Stats</button>
+    </div>
+    <div id="modal" style="width: 30%;height: 60%;background-color: white;position: absolute;text-align: center;top: -900px;margin-left:33%">
+            <h1>Statistiques : <?= $liste['nom_classe'] ?></p></h1>
+            <div style="font-size:160%;color: black;">
+                <p>Skill 1: <?= $liste['skill_1'] ?></p>
+                <p>Skill 2: <?= $liste['skill_2'] ?></p>
+                <p>ATK : <?= $liste['atk'] ?></p>
+                <p>HP : <?= $liste['hp'] ?></p>
+                <p>MP : <?= $liste['mp'] ?></p>
+                <p>DEF : <?= $liste['def'] ?></p>
+                <p>ESQ :<?= $liste['esquive'] ?></p>
+                <p>VIT :<?= $liste['vitesse'] ?></p>
+            </div> 
+            <button id="close" onclick="closeModal()">Fermer</button>
+    </div>
+
+    <script src="js/app.js" type="text/Javascript"></script>
 
 </body>
 </html>
