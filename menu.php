@@ -114,11 +114,11 @@ $liste2 = $req2->fetch();
     </div>
     <div id="modal" style="width: 30%;height: 60%;background-color: white;position: absolute;text-align: center;top: -900px;margin-left:33%">
             <h1>Statistiques : <?= $liste['nom_classe'] ?></p></h1>
-            <div style="font-size:160%;color: black;">
+            <div style="font-size:110%;color: black;">
                 <p>Skill 1: <?= $liste['skill_1'] ?></p>
                 <p>Skill 2: <?= $liste['skill_2'] ?></p>
                 <p>ATK : <?= $liste['atk'] ?></p>
-                <p>HP : <?= $liste['hp'] ?></p>
+                <p>HP : <?= $liste['hp'] ?></p> 
                 <p>MP : <?= $liste['mp'] ?></p>
                 <p>DEF : <?= $liste['def'] ?></p>
                 <p>ESQ :<?= $liste['esquive'] ?></p>
