@@ -128,6 +128,17 @@ $liste2 = $req2->fetch();
     </div>
 
     <script src="js/app.js" type="text/Javascript"></script>
+ <!-- Définition d'un item dans le localstorage pour un test -->
 
+    <script> 
+        localStorage.setItem("Pseudo du joueur", "<?= $liste2['pseudo'] ?>");
+        localStorage.setItem("Classe du personnage", "<?= $liste['nom_classe'] ?>");
+        localStorage.setItem("Points de Vie", "<?= $liste['hp'] ?>");
+        localStorage.setItem("Points de Mana", "<?= $liste['mp'] ?>");
+        localStorage.setItem("Attaque", "<?= $liste['atk'] ?>");
+        localStorage.setItem("Défense", "<?= $liste['def'] ?>");
+        localStorage.setItem("Esquive", "<?= $liste['esquive'] ?>");
+        localStorage.setItem("Vitesse", "<?= $liste['vitesse'] ?>");
+    </script>
 </body>
 </html>
