@@ -194,3 +194,15 @@ a.box-button{
   padding-left: 10%;
   padding-right: 10%;
 }
+/*pour afficher le monstre*/
+.monster {
+  float: center;
+  background-image: url(../img/zombie2.png);
+  margin: -335px auto 0;
+  width: 46px;
+  height: 79px;
+  font-size: 220px;
+  text-align: center;
+  position: relative;
+  margin-left: 70%;
+}

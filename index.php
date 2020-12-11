@@ -8,7 +8,13 @@
 </head>
 <body>
 
-    <?php
+    <?php 
+    
+    include ("data/connect_data.php");//On apelle la connexion a la base de donnée qui est dans le dossier data
+        
+    $req = $db->prepare('SELECT * FROM perso');//On select TOUT de la table perso
+    $executeIsOk = $req->execute();
+    $liste = $req->fetch();
 
     include ("data/connect_data.php");
         

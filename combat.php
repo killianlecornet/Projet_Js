@@ -11,16 +11,16 @@
 
     <?php
 
-    include ("data/connect_data.php");
-    $req = $db->prepare('SELECT * FROM classe WHERE id=:num');
+    include ("data/connect_data.php");//On apelle la connexion a la base de donnée qui est dans le dossier data
+    $req = $db->prepare('SELECT * FROM classe WHERE id=:num');// On select TOUT  dans classe qui a ['id'] demander ex: la premiere classe a 1 comme id 
 
-    $req->bindValue(':num',$_GET['IDtable'],PDO::PARAM_INT);
+    $req->bindValue(':num',$_GET['IDtable'],PDO::PARAM_INT);// on veux que :num sois egale a IDtable
 
-    $executeIsOk = $req->execute();
+    $executeIsOk = $req->execute();// On execute
 
     $liste = $req->fetch();
 
-    $req2 = $db->prepare('SELECT * FROM perso');
+    $req2 = $db->prepare('SELECT * FROM perso');// On select TOUT dans la table perso
 
     $req2->bindValue(':num',$_GET['IDtable'],PDO::PARAM_INT);
 
@@ -30,7 +30,7 @@
 
     ?>
 
-    <input type="hidden"  name="IDtable" value="<?= $liste['id'] ?>">
+    <input type="hidden"  name="IDtable" value="<?= $liste['id'] ?>"><!-- pour récuperer IDtable on la mis dans un hidden pour pas qu'il sois afficher -->
     <div>
 
         <div>
@@ -57,7 +57,7 @@
     <?php 
 
     include ("data/connect_data.php");
-    $req = $db->prepare('SELECT * FROM classe WHERE id=:num');
+    $req = $db->prepare('SELECT * FROM classe WHERE id=:num');// On select TOUT dans la table classe avec id
 
     $req->bindValue(':num',$_GET['IDtable'],PDO::PARAM_INT);
 
@@ -70,7 +70,7 @@
 
     <div>
         <form class="box-fight" action="" method="" name="login">
-            <h1 class="box-title">
+            <h1 class="box-title"><!-- choix afficher après avoir cliqué sur "combattre" -->
                 Option de Combat
             </h1> <!-- choix afficher après avoir cliqué sur "combattre" -->
             
