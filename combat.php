@@ -9,15 +9,17 @@
 <body>
 
 <?php 
+//On apelle la connexion a la base de donnée qui est dans le dossier data
 include ("data/connect_data.php");
+// On select TOUT  dans classe qui a ['id'] demander ex: la premiere classe a 1 comme id 
 $req = $db->prepare('SELECT * FROM classe WHERE id=:num');
-
+// on veux que :num sois egale a IDtable
 $req->bindValue(':num',$_GET['IDtable'],PDO::PARAM_INT);
-
+// On execute
 $executeIsOk = $req->execute();
 
 $liste = $req->fetch();
-
+// On select TOUT dans la table perso
 $req2 = $db->prepare('SELECT * FROM perso');
 
 $req2->bindValue(':num',$_GET['IDtable'],PDO::PARAM_INT);
@@ -27,6 +29,7 @@ $executeIsOk2 = $req2->execute();
 $liste2 = $req2->fetch();
 
 ?>
+    <!-- pour récuperer IDtable on la mis dans un hidden pour pas qu'il sois afficher -->
     <input type="hidden"  name="IDtable" value="<?= $liste['id'] ?>">
 <div>
    <div>
@@ -44,6 +47,7 @@ $liste2 = $req2->fetch();
 </div>
 <?php 
 include ("data/connect_data.php");
+// On select TOUT dans la table classe avec id 
 $req = $db->prepare('SELECT * FROM classe WHERE id=:num');
 
 $req->bindValue(':num',$_GET['IDtable'],PDO::PARAM_INT);
@@ -55,6 +59,7 @@ $liste = $req->fetchAll();
 <div>
 <form class="box-fight" action="" method="" name="login">
 <h1 class="box-title">Option de Combat</h1> <!-- choix afficher après avoir cliqué sur "combattre" -->
+<!-- grace a cette boucle on affiche tout le temps les skill quelque sois la classe -->
 <?php  foreach ($liste as $liste): ?>
 
 <ul style="text-align: center;padding: 0;">
