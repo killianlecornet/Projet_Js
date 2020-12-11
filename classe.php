@@ -9,18 +9,15 @@
 <body>
 
 <?php 
-//On apelle la connexion a la base de donnée qui est dans le dossier data
 include ("data/connect_data.php");
-// On select TOUT  dans classe 
+    
 $req = $db->prepare('SELECT * FROM classe');
 $executeIsOk = $req->execute();
-//Lorsqu'on execute on demande un fetchAll pour que sa affiche tout ce qui a dans cette table
 $liste = $req->fetchAll();
 
 ?>
 <form class="box" action="" method="" name="login">
 <h1 class="box-title">Choisir la classe</h1>
-<!-- petite boucle pour afficher toutes les classes avec un petit href pour aller dans le menu -->
 <?php  foreach ($liste as $liste): ?>
 
 <ul>

@@ -9,16 +9,15 @@
 <body>
 
 <?php 
-//On apelle la connexion a la base de donnée qui est dans le dossier data
 include ("data/connect_data.php");
-//On select TOUT de la table perso
+    
 $req = $db->prepare('SELECT * FROM perso');
 $executeIsOk = $req->execute();
 $liste = $req->fetch();
 
 ?>
 
-<!-- Cette form sert a faire un update lorsqu'on appuie sur le bouton on va etre rediriger sur la page modif.php grace a la methode POST ET ACTION="modif.php" -->
+
 <form class="box" action="modif.php" method="post" name="login" enctype="multipart/form-data">
   
     

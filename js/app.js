@@ -1,9 +1,8 @@
-//Création des Fonction pour la pop up 
-function openModal() { // openModal modifie le style pour que la page passe a top 150px
+function openModal() {
     document.getElementById("modal").style.top = "150px";
 }
 
-function closeModal() { // closeModal remet le style de base qui esst de -900px
+function closeModal() {
     document.getElementById("modal").style.top = "-900px";
 }
 
