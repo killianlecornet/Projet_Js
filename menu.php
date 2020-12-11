@@ -75,7 +75,7 @@ $liste2 = $req2->fetch();
     </div> 
 </div>
 <div class="box2"></div> 
-        <script type=""> 
+        <script type=""> // deplacement en javascript du personnage principal(avec les fleches directionnelles)
             $(document).keydown(function(e) { 
                 if (e.which == '38') { //haut
                     $(".box2").finish().animate({ 
