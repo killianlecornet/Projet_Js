@@ -10,11 +10,11 @@
 <body>
 
     <?php 
-    include ("data/connect_data.php");
+    include ("data/connect_data.php");//On apelle la connexion a la base de donnée qui est dans le dossier data
         
-    $req = $db->prepare('SELECT * FROM classe');
+    $req = $db->prepare('SELECT * FROM classe');// On select TOUT  dans classe 
     $executeIsOk = $req->execute();
-    $liste = $req->fetchAll();
+    $liste = $req->fetchAll();//Lorsqu'on execute on demande un fetchAll pour que sa affiche tout ce qui a dans cette table
 
     ?>
 
@@ -23,7 +23,7 @@
             Choisir la classe
         </h1>
 
-        <?php  foreach ($liste as $liste): ?>
+        <?php  foreach ($liste as $liste): ?><!-- petite boucle pour afficher toutes les classes avec un petit href pour aller dans le menu -->
 
             <ul>
                 <a href="menu.php?IDtable=<?= $liste['id'] ?>" class="btn btn-success">
