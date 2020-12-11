@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : ven. 11 déc. 2020 à 17:00
+-- Généré le : ven. 11 déc. 2020 à 17:19
 -- Version du serveur :  10.4.11-MariaDB
 -- Version de PHP : 7.4.5
 
@@ -33,7 +33,7 @@ CREATE TABLE `classe` (
   `hp` int(11) NOT NULL,
   `max_hp` int(11) NOT NULL,
   `atk` int(11) NOT NULL,
-  `mp` varchar(50) NOT NULL,
+  `mp` int(50) NOT NULL,
   `max_mp` int(11) NOT NULL,
   `def` int(11) NOT NULL,
   `skill_1` varchar(200) NOT NULL,
@@ -47,11 +47,11 @@ CREATE TABLE `classe` (
 --
 
 INSERT INTO `classe` (`id`, `nom_classe`, `hp`, `max_hp`, `atk`, `mp`, `max_mp`, `def`, `skill_1`, `esquive`, `vitesse`, `skill_2`) VALUES
-(1, 'Archer', 150, 150, 200, '300', 300, 100, 'flèche de feu', 50, 60, 'tir multiple'),
-(2, 'Mage', 100, 100, 250, '500', 500, 200, 'boule de feu', 80, 90, 'éclair foudroyant'),
-(3, 'Guerrier', 500, 500, 100, '150', 150, 300, 'épée de feu', 30, 10, 'épée de glace'),
-(4, 'Centaure', 400, 400, 150, '250', 250, 200, 'sabot de fer', 40, 80, 'charge'),
-(5, 'Gremlins', 75, 75, 300, '100', 100, 20, 'transformation démoniaque', 100, 95, 'hurlements');
+(1, 'Archer', 150, 150, 200, 300, 300, 100, 'flèche de feu', 50, 60, 'tir multiple'),
+(2, 'Mage', 100, 100, 250, 500, 500, 200, 'boule de feu', 80, 90, 'éclair foudroyant'),
+(3, 'Guerrier', 500, 500, 100, 150, 150, 300, 'épée de feu', 30, 10, 'épée de glace'),
+(4, 'Centaure', 400, 400, 150, 250, 250, 200, 'sabot de fer', 40, 80, 'charge'),
+(5, 'Gremlins', 75, 75, 300, 100, 100, 20, 'transformation démoniaque', 100, 95, 'hurlements');
 
 -- --------------------------------------------------------
 

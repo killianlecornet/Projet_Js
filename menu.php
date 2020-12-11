@@ -105,7 +105,6 @@ $liste2 = $req2->fetch();
                 } 
             });
         </script>
-    
         <form class="atk" action="combat.php?IDtable=<?= $liste['id'] ?>" method="post" name="atk" enctype="multipart/form-data">
             <input type="submit" class="btn-btn-outline-dark" value="Combattre !">
         </form>

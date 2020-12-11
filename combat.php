@@ -60,7 +60,7 @@ $liste = $req->fetchAll();
 <ul style="text-align: center;padding: 0;">
 <a href="" class=" btn-btn-fight btn-fight"><?= $liste['skill_1'] ?></a>  <a href="" class="btn-btn-fight btn-fight"><?= $liste['skill_2'] ?></a><br><br><br>
 <a href="menu.php?IDtable=<?= $liste['id'] ?>" class=" btn-btn-fight btn-fight">FUIR</a>
-
+<div class="monster"></div>
 </ul>
 <br>
 
