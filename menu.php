@@ -105,9 +105,48 @@ $liste2 = $req2->fetch();
                 } 
             });
         </script>
-        <form class="atk" action="combat.php?IDtable=<?= $liste['id'] ?>" method="post" name="atk" enctype="multipart/form-data">
-            <input type="submit" class="btn-btn-outline-dark" value="Combattre !">
-        </form>
+
+        <?php
+            $ok = $liste['id'];
+            $pdo = new PDO("mysql:host=localhost;dbname=rpg_js", "root", "", array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
+
+
+            if (!empty($_POST)) {
+
+                
+                $requeteSQL = "INSERT INTO message (messages) VALUES ('$_POST[messages]')"; 
+                $result = $pdo->exec($requeteSQL); 
+
+                if (isset($_POST['upload'])) {
+
+                    header("Location: combat.php?IDtable=$ok");
+                }
+
+                if (isset($_POST['upload2'])) {
+
+                    $req = $db->prepare('DELETE FROM message');
+                    $executeIsOk = $req->execute();
+                    header("Location: menu.php?IDtable=$ok");
+                    
+                }
+
+            }
+            ?>
+
+            <div class="">  
+                <form method="POST" action="" enctype='multipart/form-data'>   <!-- Permet aux personnes de télécharger à la fois du texte et des fichiers -->
+
+                    <div class="">
+                        <input type="hidden" class="" id="messages" name="messages" value="Vous êtes entrez dans une zone de combat">
+                    </div>
+                <div>
+                </div>
+
+                    <button  name="upload" type="submit" class="btn-btn-outline-dark" id="OK">Combattre !</button>
+
+                </form>
+            </div>
+
     <div class="button_container">
                 <button id="button_modal" onclick="openModal()" style="position: absolute;top: 10.5%;width: 17.95%;background-color: red;border: 0;color: white;height: 4%;"> Stats</button>
     </div>
@@ -123,7 +162,10 @@ $liste2 = $req2->fetch();
                 <p>ESQ :<?= $liste['esquive'] ?></p>
                 <p>VIT :<?= $liste['vitesse'] ?></p>
             </div> 
-            <button id="close" onclick="closeModal()">Fermer</button>
+            <form method="POST" action="" enctype='multipart/form-data'>
+                <input type="hidden" class="" id="messages" name="messages" value="Vous avez regardé vos stats">
+                <button type="submit" id="close" onclick="closeModal()">Fermer</button>
+            </form>
     </div>
 
     <script src="js/app.js" type="text/Javascript"></script>
@@ -139,5 +181,27 @@ $liste2 = $req2->fetch();
         localStorage.setItem("Esquive", "<?= $liste['esquive'] ?>");
         localStorage.setItem("Vitesse", "<?= $liste['vitesse'] ?>");
     </script>
+<div style="position: absolute;top: 50%;background-color: black;color: white;width: 14%;text-align: center;">
+<?php 
+        $pdo = new PDO("mysql:host=localhost;dbname=rpg_js", "root", "", array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
+
+              $result = $pdo->query("SELECT * FROM message"); 
+              while ($message = $result->fetch(PDO::FETCH_OBJ)) { ?>
+              
+                  <div><b><?php echo $message->messages ; ?></b></div>
+                
+                  
+            <?php } ?>
+
+            <form method="POST" action="" enctype='multipart/form-data'>
+              
+                <button type="submit" id="close" name="upload2" >Supp LOG</button>
+
+            </form>
+
+
+
+</div>
+ 
 </body>
 </html>
