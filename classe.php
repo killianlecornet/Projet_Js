@@ -1,39 +1,33 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css" />
-    <title>Document</title>
-</head>
-<body>
+<?php require("inc/header.inc.php"); ?>
 
-<?php 
-//On apelle la connexion a la base de donnée qui est dans le dossier data
-include ("data/connect_data.php");
-// On select TOUT  dans classe 
-$req = $db->prepare('SELECT * FROM classe');
-$executeIsOk = $req->execute();
-//Lorsqu'on execute on demande un fetchAll pour que sa affiche tout ce qui a dans cette table
-$liste = $req->fetchAll();
+    <body>
 
-?>
-<form class="box" action="" method="" name="login">
-<h1 class="box-title">Choisir la classe</h1>
-<!-- petite boucle pour afficher toutes les classes avec un petit href pour aller dans le menu -->
-<?php  foreach ($liste as $liste): ?>
+        <?php
 
-<ul>
-<a href="menu.php?IDtable=<?= $liste['id'] ?>" class="btn btn-success"><?= $liste['nom_classe'] ?></a>
+        //On apelle la connexion a la base de donnée qui est dans le dossier data avec l'élément require pour être sûr de l'obtenir
+        require("data/connect_data.php");
+        
+        // On select TOUT dans la table classe 
+        $req = $db->prepare('SELECT * FROM classe');
+        $executeIsOk = $req->execute();
+        //Lorsqu'on execute on demande un fetchAll pour que ça affiche tout le contenu de cette table
+        $liste = $req->fetchAll();
 
-</ul>
-<br>
+        ?>
+        <form class="box" action="" method="" name="login">
+            <h1 class="box-title">Choisir la classe</h1>
+            <!-- petite boucle pour afficher toutes les classes avec un petit href pour aller dans le menu -->
+            <?php foreach ($liste as $liste): ?>
 
+                <ul>
+                    <a href="menu.php?IDtable=<?= $liste['id'] ?>" class="btn btn-success">
+                        <?= $liste['nom_classe'] ?>
+                    </a>
+                </ul>
+                <br>
 
-<?php endforeach ?>
-</form>
+            <?php endforeach ?>
+        </form>
 
-
-
-</body>
+    </body>
 </html>
