@@ -36,10 +36,10 @@ $liste2 = $req2->fetch();
    <img src="img/barre_vie_mana.png" style="width: 18%;"/>
    </div>
    <div style="position:absolute;top:-0.6%;left:10%;z-index:2;font-size:90%">
-    <p><?= $liste['hp'] ?>/ <?= $liste['hp'] ?></p>
+    <p><?= $liste['hp'] ?> / <?= $liste['max_hp'] ?></p>
     </div> 
     <div style="position:absolute;top:2.5%;left:10%;z-index:2;font-size:90%">
-    <p><?= $liste['mp'] ?>/ <?= $liste['mp'] ?></p>
+    <p><?= $liste['mp'] ?> / <?= $liste['max_mp'] ?></p>
     </div>
     <div style="position:absolute;top:4.5%;left:10%;z-index:2;font-size:120%;color: tan;text-transform: uppercase;letter-spacing: 1px;">
     <p><?= $liste2['pseudo'] ?></p>
@@ -56,10 +56,10 @@ $liste2 = $req2->fetch();
     <p><?= $liste['atk'] ?></p>
     </div> 
     <div style="position:absolute;top:25.5%;left:89%;z-index:2;font-size:150%;color: grey;">
-    <p><?= $liste['hp'] ?></p>
+    <p><?= $liste['hp'] ?> / <?= $liste['max_hp']?></p>
     </div> 
     <div style="position:absolute;top:33.5%;left:89%;z-index:2;font-size:150%;color: grey;">
-    <p><?= $liste['mp'] ?></p>
+    <p><?= $liste['mp'] ?> / <?= $liste['max_mp']?></p>
     </div>
     <div style="position:absolute;top:41.5%;left:89%;z-index:2;font-size:150%;color: grey;">
     <p><?= $liste['def'] ?></p>
@@ -118,8 +118,8 @@ $liste2 = $req2->fetch();
                 <p>Skill 1: <?= $liste['skill_1'] ?></p>
                 <p>Skill 2: <?= $liste['skill_2'] ?></p>
                 <p>ATK : <?= $liste['atk'] ?></p>
-                <p>HP : <?= $liste['hp'] ?></p> 
-                <p>MP : <?= $liste['mp'] ?></p>
+                <p>HP : <?= $liste['hp'] ?> / <?= $liste['max_hp']?></p> 
+                <p>MP : <?= $liste['mp'] ?> / <?= $liste['max_mp']?></p>
                 <p>DEF : <?= $liste['def'] ?></p>
                 <p>ESQ :<?= $liste['esquive'] ?></p>
                 <p>VIT :<?= $liste['vitesse'] ?></p>
@@ -133,8 +133,8 @@ $liste2 = $req2->fetch();
     <script> 
         localStorage.setItem("Pseudo du joueur", "<?= $liste2['pseudo'] ?>");
         localStorage.setItem("Classe du personnage", "<?= $liste['nom_classe'] ?>");
-        localStorage.setItem("Points de Vie", "<?= $liste['hp'] ?>");
-        localStorage.setItem("Points de Mana", "<?= $liste['mp'] ?>");
+        localStorage.setItem("Points de Vie", "<?= $liste['hp']?> / <?= $liste['max_hp'] ?>");
+        localStorage.setItem("Points de Mana", "<?= $liste['mp']?> / <?=$liste['max_mp']?>");
         localStorage.setItem("Attaque", "<?= $liste['atk'] ?>");
         localStorage.setItem("Défense", "<?= $liste['def'] ?>");
         localStorage.setItem("Esquive", "<?= $liste['esquive'] ?>");
