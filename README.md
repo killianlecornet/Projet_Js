@@ -1,4 +1,4 @@
-Ce projet RPG a été effectué par notre groupe de 5: RAJENDRAM sarangan, LECORNET killian, MOUTINARD killian, HAMZA alexandre et MAHENDRARASAN.
+Ce projet RPG a été effectué par notre groupe de 5: RAJENDRAM sarangan, LECORNET killian, MOUTINARD killian, HAMZA alexandre.
 
 Le projet a été principalement réalisé  par du php et du javascript.
 En effet notre jeu comporte les déplacements du personnage principal, la présentation de ses statistiques,des diffèrents rôles que nous avons mis à disposition, des actions
